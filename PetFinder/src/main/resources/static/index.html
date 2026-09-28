@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LostPetFinder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">🐾 LostPetFinder</div>
+
+    <nav class="navbar">
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('lost')">Report Lost</a>
+        <a href="#" onclick="showPage('found')">Report Found</a>
+        <a href="#" onclick="showPage('search')">Search</a>
+        <a href="#" onclick="showPage('matches')">Matches</a>
+        <a href="#" onclick="showPage('myReports')">My Reports</a>
+        <a href="#" onclick="showPage('login')">Login</a>
+        <a href="#" onclick="showPage('register')">Register</a>
+        <a href="#" onclick="showPage('admin')">Admin</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home" class="page active-page">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <h1>Find Your Lost Pet</h1>
+
+                <p>
+                    LostPetFinder helps people report lost pets,
+                    report found pets, search reports and find
+                    possible matches.
+                </p>
+
+                <div class="button-group">
+
+                    <button class="primary-button"
+                            onclick="showPage('lost')">
+                        🐾 Report Lost Pet
+                    </button>
+
+                    <button class="secondary-button"
+                            onclick="showPage('search')">
+                        🔍 Search Pets
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <section class="features">
+
+            <h2>How LostPetFinder Helps</h2>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+                    <div class="icon">🐾</div>
+                    <h3>Report Lost Pets</h3>
+                    <p>
+                        Report your missing pet with important
+                        details and location.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🐕</div>
+                    <h3>Report Found Pets</h3>
+                    <p>
+                        Help owners find their pets by reporting
+                        animals you have found.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🔍</div>
+                    <h3>Search Reports</h3>
+                    <p>
+                        Search pet reports by location.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🤝</div>
+                    <h3>Find Matches</h3>
+                    <p>
+                        Find possible matches between lost
+                        and found pet reports.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- ================= REGISTER ================= -->
+
+    <section id="register" class="page">
+
+        <div class="form-card">
+
+            <h1>📝 Create Account</h1>
+
+            <p>Register for LostPetFinder.</p>
+
+            <form id="registerForm">
+
+                <label>Name</label>
+                <input type="text"
+                       id="registerName"
+                       required>
+
+                <label>Email</label>
+                <input type="email"
+                       id="registerEmail"
+                       required>
+
+                <label>Password</label>
+                <input type="password"
+                       id="registerPassword"
+                       required>
+
+                <label>Phone</label>
+                <input type="tel"
+                       id="registerPhone">
+
+                <button type="submit"
+                        class="primary-button">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p id="registerMessage"
+               class="message"></p>
+
+            <p class="center-text">
+                Already have an account?
+                <a href="#"
+                   onclick="showPage('login')">
+                    Login
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOGIN ================= -->
+
+    <section id="login" class="page">
+
+        <div class="form-card">
+
+            <h1>🔐 User Login</h1>
+
+            <p>Login to manage your pet reports.</p>
+
+            <form id="loginForm">
+
+                <label>Email</label>
+                <input type="email"
+                       id="loginEmail"
+                       required>
+
+                <label>Password</label>
+                <input type="password"
+                       id="loginPassword"
+                       required>
+
+                <button type="submit"
+                        class="primary-button">
+                    Login
+                </button>
+
+            </form>
+
+            <p id="loginMessage"
+               class="message"></p>
+
+            <p class="center-text">
+                Don't have an account?
+                <a href="#"
+                   onclick="showPage('register')">
+                    Register
+                </a>
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOST PET ================= -->
+
+    <section id="lost" class="page">
+
+        <div class="form-card">
+
+            <h1>🐾 Report Lost Pet</h1>
+
+            <p>Enter details about your lost pet.</p>
+
+            <form id="lostForm">
+
+                <label>Species</label>
+
+                <select id="lostSpecies" required>
+
+                    <option value="">
+                        Select Species
+                    </option>
+
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+
+                <label>Breed</label>
+
+                <input type="text"
+                       id="lostBreed">
+
+
+                <label>Colour</label>
+
+                <input type="text"
+                       id="lostColour"
+                       required>
+
+
+                <label>Location</label>
+
+                <input type="text"
+                       id="lostLocation"
+                       required>
+
+
+                <label>Description</label>
+
+                <textarea id="lostDescription"></textarea>
+
+
+                <button type="submit"
+                        class="primary-button">
+                    Submit Lost Report
+                </button>
+
+            </form>
+
+            <p id="lostMessage"
+               class="message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOUND PET ================= -->
+
+    <section id="found" class="page">
+
+        <div class="form-card">
+
+            <h1>🐕 Report Found Pet</h1>
+
+            <p>Enter details about the pet you found.</p>
+
+            <form id="foundForm">
+
+                <label>Species</label>
+
+                <select id="foundSpecies" required>
+
+                    <option value="">
+                        Select Species
+                    </option>
+
+                    <option value="Dog">Dog</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Bird">Bird</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+
+                <label>Breed</label>
+
+                <input type="text"
+                       id="foundBreed">
+
+
+                <label>Colour</label>
+
+                <input type="text"
+                       id="foundColour"
+                       required>
+
+
+                <label>Location</label>
+
+                <input type="text"
+                       id="foundLocation"
+                       required>
+
+
+                <label>Description</label>
+
+                <textarea id="foundDescription"></textarea>
+
+
+                <button type="submit"
+                        class="primary-button">
+                    Submit Found Report
+                </button>
+
+            </form>
+
+            <p id="foundMessage"
+               class="message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <section id="search" class="page">
+
+        <div class="form-card">
+
+            <h1>🔍 Search Pet Reports</h1>
+
+            <p>
+                Search reports by location.
+            </p>
+
+            <form id="searchForm">
+
+                <label>Location</label>
+
+                <input type="text"
+                       id="searchLocation"
+                       placeholder="Example: Tiruchengode"
+                       required>
+
+                <button type="submit"
+                        class="primary-button">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="results-container">
+
+            <h2>📋 Search Results</h2>
+
+            <div id="searchResults">
+                <p>Enter a location to search.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MATCHES ================= -->
+
+    <section id="matches" class="page">
+
+        <div class="form-card">
+
+            <h1>🤝 Find Possible Matches</h1>
+
+            <p>
+                Enter the ID of your LOST report.
+            </p>
+
+            <form id="matchesForm">
+
+                <label>Lost Report ID</label>
+
+                <input type="number"
+                       id="matchReportId"
+                       min="1"
+                       required>
+
+                <button type="submit"
+                        class="primary-button">
+                    Find Matches
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="results-container">
+
+            <h2>🐾 Possible Matches</h2>
+
+            <div id="matchResults">
+                <p>Enter a lost report ID.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MY REPORTS ================= -->
+
+    <section id="myReports" class="page">
+
+        <div class="results-container">
+
+            <h1>📋 My Reports</h1>
+
+            <div id="myReportsResults">
+                <p>Loading your reports...</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ADMIN LOGIN ================= -->
+
+    <section id="admin" class="page">
+
+        <div id="adminLoginBox"
+             class="form-card">
+
+            <h1>🛠️ Admin Login</h1>
+
+            <p>
+                Enter your admin credentials.
+            </p>
+
+            <form id="adminLoginForm">
+
+                <label>Email</label>
+
+                <input type="email"
+                       id="adminEmail"
+                       required>
+
+                <label>Password</label>
+
+                <input type="password"
+                       id="adminPassword"
+                       required>
+
+                <button type="submit"
+                        class="primary-button">
+                    Admin Login
+                </button>
+
+            </form>
+
+            <p id="adminLoginMessage"
+               class="message"></p>
+
+        </div>
+
+
+        <!-- ADMIN DASHBOARD -->
+
+        <div id="adminDashboard"
+             class="admin-dashboard hidden">
+
+            <div class="dashboard-header">
+
+                <h1>🛠️ Admin Dashboard</h1>
+
+                <button onclick="adminLogout()"
+                        class="danger-button">
+                    Logout
+                </button>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <h3>📋 Total</h3>
+                    <p id="totalReports">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>🐾 Lost</h3>
+                    <p id="lostReports">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>🐕 Found</h3>
+                    <p id="foundReports">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>🟢 Active</h3>
+                    <p id="activeReports">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>✅ Resolved</h3>
+                    <p id="resolvedReports">0</p>
+                </div>
+
+            </div>
+
+
+            <!-- ADMINS -->
+
+            <h2>👤 Admins</h2>
+
+            <div id="adminList">
+                <p>Loading admins...</p>
+            </div>
+
+
+            <!-- ALL REPORTS -->
+
+            <h2>📋 All Reports</h2>
+
+            <div id="adminReports">
+                <p>Loading reports...</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="footer">
+
+    <p>
+        © 2026 LostPetFinder |
+        Helping pets find their way home 🐾
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
